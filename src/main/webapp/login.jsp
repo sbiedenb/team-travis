@@ -11,7 +11,7 @@
 	<nav class="navbar navbar-default">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="/ERS/login.do"><strong>Login - Staging</strong></a>
+				<a class="navbar-brand" href="/ERS/login.do"><strong>Login - Changed</strong></a>
 			</div>
 		</div>
 	</nav>
