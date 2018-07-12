@@ -20,9 +20,9 @@ public final class ConnectionUtil {
 	}
 	
 	public static Connection getConnection() throws SQLException {
-		String url = System.getenv("JDBC_URL");
-		String username = System.getenv("JDBC_USERNAME");
-		String password = System.getenv("JDBC_PASSWORD");
+		String url = System.getProperty("JDBC_URL");
+		String username = System.getProperty("JDBC_USERNAME");
+		String password = System.getProperty("JDBC_PASSWORD");
 		
 		return DriverManager.getConnection(url, username, password);
 	}
