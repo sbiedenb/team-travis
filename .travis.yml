@@ -8,7 +8,11 @@ cache:
 sudo: enabled
 
 before_install:
+  - pip install --upgrade pip
   - pip install --user awscli
+  - aws ecr get-login --region us-east-1
+  - sudo aws s3 cp s3://steve-jars/ojdbc7.jar .
+  - sudo mvn install:install-file -Dfile="ojdbc7.jar" -DgroupId="com.oracle" -DartifactId="ojdbc7" -Dversion="12.1.0" -Dpackaging="jar"
 
 script:
 - eval $(aws ecr get-login --region us-east-1)
