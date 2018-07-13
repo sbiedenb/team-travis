@@ -10,7 +10,6 @@ sudo: enabled
 before_install:
   - sudo apt-get update
   - sudo pip install --user awscli
-  - sudo export PATH=$PATH:$HOME/.local/bin
   - sudo aws s3 cp s3://steve-jars/ojdbc7.jar .
   - sudo mvn install:install-file -Dfile="ojdbc7.jar" -DgroupId="com.oracle" -DartifactId="ojdbc7" -Dversion="12.1.0" -Dpackaging="jar"
 
