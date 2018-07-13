@@ -3,28 +3,24 @@ jdk: oraclejdk8
 
 sudo: false
 
-phases:
-  before_install:
-    commands:
-      - pip install --user awscli
-      - export PATH=$PATH:$HOME/.local/bin
-      - aws s3 cp s3://steve-jars/ojdbc7.jar .
-      - mvn install:install-file -Dfile="ojdbc7.jar" -DgroupId="com.oracle" -DartifactId="ojdbc7" -Dversion="12.1.0" -Dpackaging="jar"
-  run:
-    commands:
-      - mvn test
+before_install:
+  - apt-get update
+  - pip install --user awscli
+  - export PATH=$PATH:$HOME/.local/bin
+  - aws s3 cp s3://steve-jars/ojdbc7.jar .
+  - mvn install:install-file -Dfile="ojdbc7.jar" -DgroupId="com.oracle" -DartifactId="ojdbc7" -Dversion="12.1.0" -Dpackaging="jar"
 
-  build:
-    commands:
-      - mvn clean package
-  deploy:
-    provider: opsworks
-    access-key-id: AKIAJLEBPPJAKHCJ4RPQ
-    secret-access-key: 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
-    app-id: eaec693a-73fd-45f8-9495-0712410ca680
-    region: us-east-1
+build:
+  commands:
+    - mvn clean package
+deploy:
+  provider: opsworks
+  access-key-id: AKIAJLEBPPJAKHCJ4RPQ
+  secret-access-key: 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
+  app-id: eaec693a-73fd-45f8-9495-0712410ca680
+  region: us-east-1
 
 artifacts:
   files:
-    - target/java-demo.war
+    - target/ERS.war
   discard-paths: yes
