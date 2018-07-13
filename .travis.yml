@@ -4,19 +4,17 @@ jdk: oraclejdk8
 cache:
   directories:
   - $HOME/.local
+  - $HOME/.m2
 
 sudo: enabled
 
 before_install:
   - pip install --user awscli
+  - eval $(aws ecr get-login --region us-east-1)
   
 install:
-  - sudo aws s3 cp s3://steve-jars/ojdbc7.jar .
+  - sudo aws s3 cp s3://steve-jars/ojdbc7.jar $HOME/.m2
   - sudo mvn install:install-file -Dfile="ojdbc7.jar" -DgroupId="com.oracle" -DartifactId="ojdbc7" -Dversion="12.1.0" -Dpackaging="jar"
-
-
-before_script:
-  - eval $(aws ecr get-login --region us-east-1)
   
 deploy:
   provider: opsworks
