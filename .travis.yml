@@ -22,3 +22,4 @@ deploy:
   secret-access-key: IIyDqosywQlH+Xosex/zFYlaHLn7GkV3u4a/BuoF
   app-id: eaec693a-73fd-45f8-9495-0712410ca680
   region: us-east-1
+  skip_cleanup: true
