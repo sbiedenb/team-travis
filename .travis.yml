@@ -1,6 +1,10 @@
 language: java
 jdk: oraclejdk8
 
+cache:
+  directories:
+  - $HOME/.local
+
 sudo: enabled
 
 before_install:
