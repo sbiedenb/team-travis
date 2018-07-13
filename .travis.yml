@@ -4,6 +4,10 @@ jdk: oraclejdk8
 sudo: false
 
 phases:
+  install:
+    commands:
+      - aws s3 cp s3://steve-jars/ojdbc7.jar .
+      - mvn install:install-file -Dfile="ojdbc7.jar" -DgroupId="com.oracle" -DartifactId="ojdbc7" -Dversion="12.1.0" -Dpackaging="jar"
   run:
     commands:
       - mvn test
