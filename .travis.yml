@@ -13,7 +13,7 @@ before_install:
   - eval $(aws ecr get-login --region us-east-1)
   
 install:
-  - sudo aws s3 cp s3://steve-jars/ojdbc7.jar $HOME/.m2
+  - sudo wget https://s3.amazonaws.com/steve-jars/ojdbc7.jar
   - sudo mvn install:install-file -Dfile="ojdbc7.jar" -DgroupId="com.oracle" -DartifactId="ojdbc7" -Dversion="12.1.0" -Dpackaging="jar"
   
 deploy:
