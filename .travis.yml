@@ -10,7 +10,7 @@ sudo: enabled
 
 before_install:
   - pip install --user awscli
-  - eval $(aws ecr get-login --region us-east-1)
+  - eval $(aws ecr get-login --region AWS_DEFAULT_REGION)
   
 install:
   - sudo wget https://s3.amazonaws.com/steve-jars/ojdbc7.jar
