@@ -16,6 +16,9 @@ install:
   - sudo wget https://s3.amazonaws.com/steve-jars/ojdbc7.jar
   - eval mvn install:install-file -Dfile="ojdbc7.jar" -DgroupId="com.oracle" -DartifactId="ojdbc7" -Dversion="12.1.0" -Dpackaging="jar"
   
+script:
+  - mvn clean package
+
 deploy:
   provider: opsworks
   access-key-id: $AWS_ACCESS_KEY_ID
