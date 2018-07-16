@@ -20,9 +20,10 @@ script:
   - mvn clean package
 
 deploy:
-  provider: opsworks
+  provider: s3
   access-key-id: $AWS_ACCESS_KEY_ID
   secret-access-key: $AWS_SECRET_ACCESS_KEY
-  app-id: eaec693a-73fd-45f8-9495-0712410ca680
-  region: us-east-1
+  bucket: team-travis-prod-1337
+  # app-id: eaec693a-73fd-45f8-9495-0712410ca680
+  # region: us-east-1
   skip_cleanup: true
