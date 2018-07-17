@@ -21,7 +21,7 @@ script:
 
 deploy:
   provider: opsworks
-  local-dir: target
+  local-dir: target/ERS.war
   access-key-id: $AWS_ACCESS_KEY_ID
   secret-access-key: $AWS_SECRET_ACCESS_KEY
   # bucket: team-travis-prod-1337
