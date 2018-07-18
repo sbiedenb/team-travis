@@ -18,17 +18,17 @@ install:
   
 script:
   - mvn clean package
-  - cd target
-  - zip -r ers *
+  # - cd target
+  # - zip -r ers *
 
 deploy:
   provider: s3
-  # local-dir: target
+  local-dir: target
   access-key-id: $AWS_ACCESS_KEY_ID
   secret-access-key: $AWS_SECRET_ACCESS_KEY
   bucket: team-travis-prod-1337
-  key: ers.zip
-  bundle-type: zip
+  # key: ers.zip
+  # bundle-type: zip
   # app-id: 14bde92d-b5cb-4590-824b-700d0f570b06
   # region: us-east-1
   skip_cleanup: true
