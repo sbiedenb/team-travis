@@ -18,7 +18,7 @@ install:
   
 script:
   - mvn clean package
-  - cd /target
+  - cd target
   - zip -r ers *
 
 deploy:
@@ -32,3 +32,9 @@ deploy:
   # app-id: 14bde92d-b5cb-4590-824b-700d0f570b06
   # region: us-east-1
   skip_cleanup: true
+
+  provider: opsworks
+  access-key-id: $AWS_ACCESS_KEY_ID
+  secret-access-key: $AWS_SECRET_ACCESS_KEY
+  app-id: 14bde92d-b5cb-4590-824b-700d0f570b06
+  region: us-east-1
