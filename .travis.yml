@@ -18,6 +18,7 @@ install:
   
 script:
   - mvn clean package
+  - cd /target
   - zip -r ers *
 
 deploy:
