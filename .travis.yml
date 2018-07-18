@@ -18,7 +18,7 @@ install:
   
 script:
   - mvn clean package
-  - zip -r ers /target
+  - zip -r ers . -i /target
 
 deploy:
   provider: s3
