@@ -41,7 +41,7 @@
 				</form>
 			</div>
 			<div class="panel-footer">
-				<a class="anchor-center" href="passwordRecovery.do"><strong>Forgot your password?</strong></a>
+				<a class="anchor-center" href="/ERS/passwordRecovery.do"><strong>Forgot your password?</strong></a>
 			</div>
 		</div>
 	</div>
