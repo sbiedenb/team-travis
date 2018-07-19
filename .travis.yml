@@ -1,5 +1,5 @@
 language: java
-jdk: oraclejdk8
+jdk: oraclejdk7
 
 cache:
   directories:
@@ -18,12 +18,12 @@ install:
   
 script:
   - mvn clean package
-  - cd target
-  - zip -r ERS ERS ERS.war
+  # - cd target
+  # - zip -r ERS ERS ERS.war
 
 deploy:
   provider: s3
-  # local-dir: target
+  local-dir: target
   access-key-id: $AWS_ACCESS_KEY_ID
   secret-access-key: $AWS_SECRET_ACCESS_KEY
   bucket: team-travis-prod-1337
