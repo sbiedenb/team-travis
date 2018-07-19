@@ -33,14 +33,14 @@ deploy:
   # region: us-east-1
   skip_cleanup: true
 
-  provider: codedeploy
-  access_key_id: $AWS_ACCESS_KEY_ID
-  secret_access_key: $AWS_SECRET_ACCESS_KEY
-  bucket: team-travis-prod-1337
-  key: target/ERS.war
-  application: ERS
-  deployment_group: ERS-prod
-  skip_cleanup: true
+  # provider: codedeploy
+  # access_key_id: $AWS_ACCESS_KEY_ID
+  # secret_access_key: $AWS_SECRET_ACCESS_KEY
+  # bucket: team-travis-prod-1337
+  # key: target/ERS.war
+  # application: ERS
+  # deployment_group: ERS-prod
+  # skip_cleanup: true
 
   # provider: opsworks
   # access-key-id: $AWS_ACCESS_KEY_ID
