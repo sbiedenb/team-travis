@@ -19,7 +19,7 @@ install:
 script:
   - mvn clean package
   - cd target
-  - zip -r ers ERS ERS.war
+  - zip -r ERS ERS.war
 
 deploy:
   provider: s3
