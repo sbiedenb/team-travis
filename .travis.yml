@@ -22,16 +22,16 @@ script:
   # - zip -r ERS ERS ERS.war
 
 deploy:
-  # provider: s3
-  # # local-dir: target
-  # access-key-id: $AWS_ACCESS_KEY_ID
-  # secret-access-key: $AWS_SECRET_ACCESS_KEY
-  # bucket: team-travis-prod-1337
-  # # key: ers.zip
-  # # bundle-type: zip
-  # # app-id: 14bde92d-b5cb-4590-824b-700d0f570b06
-  # # region: us-east-1
-  # skip_cleanup: true
+  provider: s3
+  # local-dir: target
+  access-key-id: $AWS_ACCESS_KEY_ID
+  secret-access-key: $AWS_SECRET_ACCESS_KEY
+  bucket: team-travis-prod-1337
+  # key: ers.zip
+  # bundle-type: zip
+  # app-id: 14bde92d-b5cb-4590-824b-700d0f570b06
+  # region: us-east-1
+  skip_cleanup: true
 
   # provider: codedeploy
   # access_key_id: $AWS_ACCESS_KEY_ID
@@ -42,9 +42,9 @@ deploy:
   # deployment_group: ERS-prod
   # skip_cleanup: true
 
-  provider: opsworks
-  access-key-id: $AWS_ACCESS_KEY_ID
-  secret-access-key: $AWS_SECRET_ACCESS_KEY
-  app-id: 14bde92d-b5cb-4590-824b-700d0f570b06
-  region: us-east-1
-  skip_cleanup: true
+  # provider: opsworks
+  # access-key-id: $AWS_ACCESS_KEY_ID
+  # secret-access-key: $AWS_SECRET_ACCESS_KEY
+  # app-id: 14bde92d-b5cb-4590-824b-700d0f570b06
+  # region: us-east-1
+  # skip_cleanup: true
